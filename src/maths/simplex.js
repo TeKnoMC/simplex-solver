@@ -15,7 +15,7 @@ simplex(Matrix m) => Array values
 
 */
 
-export function simplexFromBFS(arrayData) {
+export function simplexFromBFS(arrayData, rowHeadings, colHeadings) {
     let matrix = new Matrix(arrayData);
 
     let complete = false;
@@ -52,6 +52,9 @@ export function simplexFromBFS(arrayData) {
             }
 
             if (pivotRow !== -1) {
+                // Swap b.v.
+                rowHeadings[pivotRow] = colHeadings[pivotColumn];
+
                 // Scale pivot row
                 matrix.scaleRowAndStore(pivotRow, 1/(matrix.matrixData[pivotRow][pivotColumn]));
 
@@ -75,5 +78,9 @@ export function simplexFromBFS(arrayData) {
         }
     }
 
-    return matrix;
+    return {
+        matrix: matrix,
+        rowHeadings: rowHeadings,
+        columnHeadings: colHeadings
+    };
 }
