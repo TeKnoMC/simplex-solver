@@ -1,15 +1,5 @@
 class Matrix {
     constructor(matrixArray) {
-        /*
-        matrixArray = [
-            [20, 30, 1, 0, 690],
-            [5, 4, 0, 1, 120],
-            ...
-        ];
-
-        matrixArray[row][column];
-        */
-
         this.matrixData = matrixArray;
         this.rowLength = this.matrixData[0].length;
         this.numOfRows = this.matrixData.length;

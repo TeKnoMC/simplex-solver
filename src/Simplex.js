@@ -81,6 +81,9 @@ export class SimplexSolver extends React.Component {
 
         return (
             <div>
+                <div id="inputDiv">
+                    
+                </div>
                 <SimpelxTableau data={data} rowNames={rowHeadings} columnNames={colHeadings} />
             </div>
         );
