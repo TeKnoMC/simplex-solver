@@ -1,7 +1,7 @@
 import React from 'react';
 import { simplexFromBFS } from './maths/simplex';
 
-class SimpelxTableau extends React.Component {
+class SimplexTableau extends React.Component {
     renderSimplexAsTable(result) {
         const tableHeading = result.columnHeadings.map((data, idx) => {
             return <th key={idx} >{data}</th>;
@@ -84,7 +84,7 @@ export class SimplexSolver extends React.Component {
                 <div id="inputDiv">
                     
                 </div>
-                <SimpelxTableau data={data} rowNames={rowHeadings} columnNames={colHeadings} />
+                <SimplexTableau data={data} rowNames={rowHeadings} columnNames={colHeadings} />
             </div>
         );
     }
